@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>dojo survey</title>
+  </head>
+  <body>
+    <h1>Dojo Survey</h1>
+    {% with messages = get_flashed_messages() %} {% if messages %} {% for
+    message in messages %}
+    <p>{{message}}</p>
+    {% endfor %} {% endif %} {% endwith %}
+    <form action="/create" method="post">
+      <div class="body">
+        <label class="input" for="name">Name:</label>
+        <input type="text" name="name" />
+      </div>
+      <div class="body">
+        <label class="input" for="Dojo location">Dojo location</label>
+        <select name="location" label="Dojo location">
+          <option value="none"></option>
+          <option value="seattle">Seattle</option>
+          <option value="online">Online</option>
+          <option value="Bellevue">Bellevue</option>
+          <option value="Chicago">Chicago</option>
+        </select>
+      </div>
+      <div class="body">
+        <label class="input" for="favouraite language"
+          >favouraite language</label
+        >
+        <select name="language">
+          <option value="none"></option>
+          <option value="Python">Python</option>
+          <option value="Java">Java</option>
+          <option value="C#">C#</option>
+          <option value="HTML">HTML</option>
+        </select>
+      </div>
+      <div class="comment">
+        <label for="comment" class="input">comment</label>
+        <textarea name="comment" rows="3"></textarea>
+      </div>
+      <div>
+        <input class="button" type="submit" value="Submit" />
+      </div>
+    </form>
+  </body>
+</html>
